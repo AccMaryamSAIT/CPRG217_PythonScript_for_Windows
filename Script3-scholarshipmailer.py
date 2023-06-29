@@ -4,8 +4,8 @@ Authors: Roman Kapitoulski, Eric Russon, Maryam Bunama
 Version: 1.1
 Date: June 29, 2023 
 Description: This is a script that sends an acceptance email to student who applied for the CPRG-217 scholarship.
-It reads the student information in an Excel file applies it to custom fields in a Word document. Then, it sends
-an email customized for each scholarship reciever.
+It reads the student information in an Excel file and applies it to custom fields in a Word document. Then, it sends
+an email customized for each scholarship receiver.
 '''
 
 import win32com.client as win32 # Module that allows dispatching and working with Excel, Word, and Outlook for this script
