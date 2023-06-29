@@ -1,7 +1,7 @@
 '''
 Name: Script3-scholarshipmailer.py
 Authors: Roman Kapitoulski, Eric Russon, Maryam Bunama
-Version: 1.0
+Version: 1.1
 Date: June 29, 2023 
 Description: This is a script that sends an acceptance email to student who applied for the CPRG-217 scholarship.
 It reads the student information in an Excel file applies it to custom fields in a Word document. Then, it sends
@@ -81,8 +81,8 @@ except Exception as e:
 
 # Read events sheet and assign to a variable
 try:
-    readEvents = wb.Worksheets('Events')
-    allEvents = readEvents.UsedRange
+    readReceivers = wb.Worksheets('Receivers')
+    allReceivers = readReceivers.UsedRange
 
 except Exception as e:
     error_message = f'An error occured: {str(e)}'
@@ -106,16 +106,16 @@ except Exception as e:
 
 ## ASSIGN VARIABLES TO EXCEL INFORMATION
 # Iterate through each row, collect, and format information.
-i = allEvents.Rows.Count - 1
+i = allReceivers.Rows.Count - 1
 n = 0   
 while i > 0:
     # Excel cell values that change to the next value with every loop
-    FirstName = allEvents[7+n].Value
-    LastName = allEvents[8+n].Value
-    Date = allEvents[9+n].Value.strftime('%B %d,%Y') #Formatting the excel date to 'Month, dd, yyyy'
-    Time = decimalToTime(allEvents[10+n].Value) 
-    Location = allEvents[11+n].Value
-    Email = allEvents[12+n].Value
+    FirstName = allReceivers[7+n].Value
+    LastName = allReceivers[8+n].Value
+    Date = allReceivers[9+n].Value.strftime('%B %d,%Y') #Formatting the excel date to 'Month, dd, yyyy'
+    Time = decimalToTime(allReceivers[10+n].Value) 
+    Location = allReceivers[11+n].Value
+    Email = allReceivers[12+n].Value
 
     # Define the variables to replace
     variables = {
