@@ -1,8 +1,8 @@
 '''
-Name: bedtimealarm.py
+Name: Script2-bedtimealarm.py
 Authors: Roman Kapitoulski, Eric Russon, Maryam Bunama
-Version: 1.2
-Date: July 3, 2023
+Version: 1.2.1
+Date: July 4, 2023
 Description: This script has been made to run in the background and monitoring a kid's PC hours. Once he reaches the time limit,
 he will see a pop-up dialog box with two options. If he chooses 'Yes', the computer will shut down after 5 mintues. If he chooses 'no',
 he will be able to continue using the computer but an email will be sent to the parent. 
@@ -94,7 +94,11 @@ def displayDialog(email):
 def runInBackground():
     filePath = f'{os.getcwd()}/alarmsettings.xlsx' # get excel settings filepath
 
-    ws1 = dispatchExcelFile(filePath)  # Dispatch excel 
+    try:
+        ws1 = dispatchExcelFile(filePath)  # Dispatch excel 
+    except:
+        print('Settings file was not found! Please make sure a settings file was created.')
+
     email = ws1.Range('E2').Value # Parent email address
 
     # Use veto time if it's available. Otherwise, use set time
