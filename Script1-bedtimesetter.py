@@ -4,7 +4,7 @@ Authors: Roman Kapitoulski, Eric Russon, Maryam Bunama
 Version: 1.2
 Date: July 3, 2023
 Description: This script has been made for a parent to set an alarm for children when their bedtime approaches. 
-It has the options to set the timer, view the time set, veto the timer (until a set time limit), save and exit, 
+It has the options to set the timer, view the time set, veto the timer (until a set time limit), set email, save and exit, 
 or save without exiting. The time format used corresponds to 'hh:mm AM/PM' throughout. The code won't accept vetoing the time 
 if no time was previously set.
 '''
