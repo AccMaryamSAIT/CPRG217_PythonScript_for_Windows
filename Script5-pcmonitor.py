@@ -1,8 +1,8 @@
 '''
-Name:
+Name: script5-pcmonitor.py
 Authors: Roman Kapitoulski, Eric Russon, Maryam Bunama
-Version: 1.0 
-Date: July 9, 2023
+Version: 1.1 
+Date: July 15, 2023
 Description: Set limits and monitor GPU temperature, memory usage and disk usage.
 Display a GUI error if limits reached.
 Retrieve information about GPU, memory usage, and disk usage. 
