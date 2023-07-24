@@ -1,8 +1,8 @@
 '''
 Name: script5-pcmonitor.py
 Authors: Roman Kapitoulski, Eric Russon, Maryam Bunama
-Version: 1.1 
-Date: July 15, 2023
+Version: 1.2 
+Date: July 24, 2023
 Description: Set limits and monitor GPU temperature, memory usage and disk usage.
 Display a GUI error if limits reached.
 Retrieve information about GPU, memory usage, and disk usage. 
@@ -45,6 +45,7 @@ def showErrorMessage(message):
         exit(0)
 
 
+# Start monitoring system info and compare to values provided by the user or default vales.
 def monitorLimits(gpuLimit, memoryLimit, diskPath, diskLimit):
     print("Monitoring initiated...")
     while True:
@@ -72,6 +73,7 @@ def monitorLimits(gpuLimit, memoryLimit, diskPath, diskLimit):
         time.sleep(10)  # Wait for 10 seconds before checking limits again
 
 
+# Collect values from user to use as limits
 def promptUser():
     # Try except blocks to ensure proper values are entered
 
@@ -131,6 +133,6 @@ def main():
     monitorLimits(gpuLimit, memoryLimit, diskPath, diskLimit)
 
 
-# If the python script file name is main.py then run this program
-if __name__ == '__main__':
-    main()
+# Run the program
+main()
+
